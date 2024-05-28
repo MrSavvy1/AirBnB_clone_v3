@@ -29,5 +29,15 @@ def stats():
     stats of obj
     """
     data = {
-	"amenities": storage.count("Amenity")
+	"amenities": storage.count("Amenity"),
+	"cities": storage.count("City"),
+	"places": storage.count("Places"),
+	"users": storage.count("Users"),
+	"states": storage.count("States"),
+	"reviews": storage.count("User")
     }
+
+    resp = jsonify(data)
+    resp.status_code = 200
+
+    return resp
