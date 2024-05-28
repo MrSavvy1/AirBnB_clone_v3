@@ -6,10 +6,28 @@ app views
 from flask import jsonify
 from api.v1.views import app_views
 
-@app_views.route('/status')
-def api_status():
+from models import storage
+
+@app_views.route("/status", methods=['GET', strict_slashes=False)
+def status():
     """
     app def
     """
-    response = {'status': : 'OK')
-    return jsonify(response)
+    data = {
+	"status": "OK"
+    }
+
+    resp = jsonify
+    res.status_code = 200
+
+
+    return resp
+
+@app_views.route("/stats", methods=['GET'], strict_slashes=False)
+def stats():
+    """
+    stats of obj
+    """
+    data = {
+	"amenities": storage.count("Amenity")
+    }
