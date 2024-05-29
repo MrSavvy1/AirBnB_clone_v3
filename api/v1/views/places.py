@@ -2,8 +2,9 @@
 """
 route for place
 """
-from api.v1.views import app_views, storage
-from flask import jsonify, abort, request
+from api.v1.views import app_views
+from flask import jsonify, abort, reques, make_response
+from models import storage
 from models.place import Place
 
 @app_views.route("/cities/<city_id>/places", methods=["GET"],
